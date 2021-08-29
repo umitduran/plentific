@@ -1,21 +1,24 @@
-import React, {createContext,useReducer} from 'react';
+import React, {createContext,useReducer,useContext} from 'react';
 import Reducer from './Reducer';
 
+
 const initialState = {
-    categoryList: [],
+    categoryList: 'fkebvkernvkejnw',
     proList: [],
     error: null,
-}
+};
 
-const Store = ({children}) => {
+
+export const Store = createContext(initialState);
+
+const { Provider } = Store;
+Store.displayName = 'Store';
+
+export const StoreProvider = ({children}) => {
 
     const [state,dispatch] = useReducer(Reducer,initialState);
 
     return(
-        <Context.Provider value={[state,dispatch]}>{children}</Context.Provider>
+        <Provider value={[state,dispatch]}>{children}</Provider>
     );
 };
-
-export const Context = createContext(initialState);
-
-export default Store;

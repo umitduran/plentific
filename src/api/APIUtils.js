@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 const selectApi = (baseUrl) => {
-    debugger;
-    console.log(baseUrl === "api_v1" ? process.env.REACT_APP_GET_API_URL_V1 : "v2");
     return baseUrl === "api_v1" ? process.env.REACT_APP_GET_API_URL_V1 : process.env.REACT_APP_GET_API_URL_V2
 }
 

@@ -1,16 +1,19 @@
 import React, {useState,useEffect,useContext} from 'react';
-import {Context} from '../context/Store';
-import {getCategories} from '../api/CategoryAPI';
+import {Store} from '../context/Store';
+import {getCategoryList} from '../api/CategoryAPI';
 
 export const ProsPage = () => {
-    const [context,dispatch] = useContext(Context);
+    const [store,dispatch] = useContext(Store);
     const [proList,setProList] = useState([]);
 
     useEffect(() => {
-        const categories = getCategories();
-        console.log(categories);
-    },[proList]);
+       getList()
+    },[]);
+
+    const getList = async () => {
+        const test = await getCategoryList();
+    };
 
 
-    return (<div>prosPage</div>)
+    return (<div>{store.categoryList}</div>)
 };
