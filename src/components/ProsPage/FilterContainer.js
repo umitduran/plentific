@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Store } from "../../context/Store";
 import { getCategoryList } from "../../api/CategoryAPI";
-import { Layout, Row, Divider, Select, Input, Button, Space } from "antd";
+import { Select, Input, Button, Space } from "antd";
 import "antd/dist/antd.css";
-
-const { Option } = Select;
 
 export const FilterContainer = () => {
   const [store, dispatch] = useContext(Store);
@@ -19,7 +17,7 @@ export const FilterContainer = () => {
     const categories = await getCategoryList();
     dispatch({
       type: "GET_CATEGORY_LIST",
-      payload: categories.filter(cat => cat.hidden === false),
+      payload: categories.filter((cat) => cat.hidden === false),
     });
   };
 
@@ -42,17 +40,18 @@ export const FilterContainer = () => {
       </Select>
 
       <Input
-          size="small"
-          placeholder="Enter PostCode"
-          value={postCode} onChange={(e) => {
-              setPostCode(e.target.value.toLowerCase());
-          }}
+        size="small"
+        placeholder="Enter PostCode"
+        value={postCode}
+        onChange={(e) => {
+          setPostCode(e.target.value.toLowerCase());
+        }}
       />
 
       <Button
         type={"primary"}
         size={"small"}
-        onClick={(e) =>
+        onClick={() =>
           dispatch({
             type: "SET_FILTER_PARAMS",
             payload: {

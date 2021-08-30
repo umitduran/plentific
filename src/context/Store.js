@@ -1,4 +1,5 @@
-import React, { createContext, useReducer, useContext } from "react";
+import React, { createContext, useReducer } from "react";
+import PropTypes from "prop-types";
 import Reducer from "./Reducer";
 
 const initialState = {
@@ -21,4 +22,8 @@ export const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   return <Provider value={[state, dispatch]}>{children}</Provider>;
+};
+
+StoreProvider.propTypes = {
+  children: PropTypes.element,
 };

@@ -1,3 +1,19 @@
+#Parts to be Improved
+ - Should be added Unit testing framework (jest,...)
+ - Should be added Multi-Environment setup (environment variables)
+ - Should be added Cypress for e2e test
+ - __test__ file should be added
+ - Should be added Cache Busting for local cache
+ - Should be used Redux or Mobx
+ - Should be added CI/CD using with Docker 
+ - Utils file should be added
+ - Style file should be separate
+ - Should be used style components instead of Antd
+ - API parts should be improved using with middleware for error handling and loading states
+ - Internationalization or multi-lingual support is added by the use of the “i18next” library
+ - All assets will be accessible and imported from ‘/assets’
+ - Each asset should be registered and exported from the /index.js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

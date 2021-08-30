@@ -23,7 +23,7 @@ export const Header = () => {
   const renderSubTitle = () => {
     return (
       <Text style={{color:'gray'}}>
-        Welcome the plentific pro's page by (umitduran)
+        Welcome the plentific pro&apos;s page by (umitduran)
       </Text>
     );
   };

@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import api from "./APIUtils";
 
 export const getCategoryList = () =>

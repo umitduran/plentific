@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Table, Tag, Space, Rate, message } from "antd";
+import { Table, Tag, Rate, message } from "antd";
 import "antd/dist/antd.css";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import { Store } from "../../context/Store";
@@ -8,7 +8,7 @@ import { postProList } from "../../api/ProAPI";
 export const ProList = () => {
   const [store, dispatch] = useContext(Store);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize] = useState(10);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
 
@@ -30,9 +30,9 @@ export const ProList = () => {
       if (response.error) {
         message.error({
           content: response.error,
-          className: 'custom-class',
+          className: "custom-class",
           style: {
-            marginTop: '20vh',
+            marginTop: "20vh",
           },
         });
       } else {
@@ -84,7 +84,7 @@ export const ProList = () => {
     total: total,
     pageSize: pageSize,
     current: currentPage,
-    onChange: (page, pageSize) => {
+    onChange: (page) => {
       setCurrentPage(page);
     },
   };
