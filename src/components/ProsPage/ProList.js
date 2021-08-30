@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Table, Tag, Space, Rate } from "antd";
+import { Table, Tag, Space, Rate, message } from "antd";
 import "antd/dist/antd.css";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import { Store } from "../../context/Store";
@@ -27,12 +27,21 @@ export const ProList = () => {
         category_id: store.category,
         postCode: store.postCode,
       });
-      setTotal(parseInt(response.count));
-
-      dispatch({
-        type: "GET_PRO_LIST",
-        payload: response.pros,
-      });
+      if (response.error) {
+        message.error({
+          content: response.error,
+          className: 'custom-class',
+          style: {
+            marginTop: '20vh',
+          },
+        });
+      } else {
+        setTotal(parseInt(response.count));
+        dispatch({
+          type: "GET_PRO_LIST",
+          payload: response.pros,
+        });
+      }
       setLoading(false);
     }
   };

@@ -45,7 +45,7 @@ export const FilterContainer = () => {
           size="small"
           placeholder="Enter PostCode"
           value={postCode} onChange={(e) => {
-              setPostCode(e.target.value);
+              setPostCode(e.target.value.toLowerCase());
           }}
       />
 

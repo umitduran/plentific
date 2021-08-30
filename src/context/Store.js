@@ -4,6 +4,9 @@ import Reducer from "./Reducer";
 const initialState = {
   categoryList: [],
   proList: [],
+  proListLoading: false,
+  proListSuccess: true,
+  proListError: false,
   category: "",
   postCode: "",
   error: null,

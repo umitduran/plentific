@@ -16,5 +16,10 @@ export const postProList = (filter) => {
             pros: resp.data.response.pros,
             count: resp.headers['x-pagination-count']
         };
+    })
+  .catch((error) => {
+      return {
+        error: error.message
+      };
     });
 };
