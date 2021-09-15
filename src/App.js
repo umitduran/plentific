@@ -4,11 +4,11 @@ import { ProsPage } from "./components/ProsPage/ProsPage";
 import { StoreProvider } from "./context/Store";
 
 function App() {
-  return (
-    <StoreProvider>
-      <ProsPage />
-    </StoreProvider>
-  );
+    return (
+        <StoreProvider>
+            <ProsPage />
+        </StoreProvider>
+    );
 }
 
 export default App;
