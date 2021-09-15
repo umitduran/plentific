@@ -1,4 +1,5 @@
 #Parts to be Improved
+ - Should be responsive also :)
  - Should be added Unit testing framework (jest,...)
  - Should be added Multi-Environment setup (environment variables)
  - Should be added Cypress for e2e test
